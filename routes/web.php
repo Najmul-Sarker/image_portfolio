@@ -4,6 +4,7 @@ use App\Http\Controllers\backend\CategoryController as BackendCategoryController
 use App\Http\Controllers\backend\HomeController;
 use App\Http\Controllers\backend\PortfolioController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\frontend\FrontendController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +19,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('frontend.dashboard');
+    return view('welcome');
 });
 
+//frontend
+Route::get('/frontend',[FrontendController::class,'index'])->name('frontend.index');
+
+
+//admin
 //Routes for admin category
 
 Route::get('/admin',[HomeController::class,'index'])->name('admin.index');
