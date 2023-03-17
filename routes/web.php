@@ -43,3 +43,8 @@ Route::get('/admin/portfolio/show{portfolio}',[PortfolioController::class,'show'
 Route::get('/admin/portfolio/edit{portfolio}',[PortfolioController::class,'edit'])->name('portfolio.edit');
 Route::patch('/admin/portfolio/update/{portfolio}',[PortfolioController::class,'update'])->name('portfolio.update');
 Route::delete('/admin/portfolio/delete{portfolio}',[PortfolioController::class,'delete'])->name('portfolio.delete');
+
+Route::get('/admin/portfolio/trash',[PortfolioController::class,'trash'])->name('portfolio.trash');
+Route::get('/admin/portfolio/trash/restore{portfolio}',[PortfolioController::class,'restore'])->name('portfolio.restore');
+Route::delete('/admin/portfolio/trash/permanentdelete{portfolio}',[PortfolioController::class,'permanentdelete'])->name('portfolio.permanentdelete');
+

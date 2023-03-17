@@ -89,4 +89,25 @@ class PortfolioController extends Controller
         return redirect(route('portfolio.index'))->with('success','Portfolio Updated Successfully!');
     }
 
+    public function delete(Portfolio $portfolio){
+        $portfolio->delete();
+        return redirect(route('portfolio.index'))->with('success','Portfolio Deleted Successfully!');
+    }
+
+    public function trash(){
+        $trash = Portfolio::onlyTrashed()->get();
+        
+        return view('backend.portfolio.trash',compact('trash'));
+    }
+
+    public function restore($id){
+        $trashed = Portfolio::onlyTrashed()->find($id);
+        $trashed->restore();
+        return back()->with('success','Portfolio Restore Successfully!');
+    }
+    public function permanentdelete($id){
+        $trashed_data = Portfolio::onlyTrashed()->find($id);
+        $trashed_data->forceDelete();
+        return back()->with('success','Portfolio Permanently Deleted Successfully!');
+    }
 }
