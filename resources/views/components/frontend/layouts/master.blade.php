@@ -1,3 +1,7 @@
+@php
+    use App\Http\Controllers\frontend\FrontendController;
+
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>

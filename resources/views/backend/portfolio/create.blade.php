@@ -15,7 +15,7 @@
                                     @csrf
                                     
                                     <div class="mb-3">
-                                        <label for="name">Select Category:</label>
+                                        <label for="category_id">Select Category:</label>
                                         <select name="category_id" id="category_id" class="form-select">
                                             <option selected disabled value="">Select Category</option>
                                             @foreach ($categories as $category )

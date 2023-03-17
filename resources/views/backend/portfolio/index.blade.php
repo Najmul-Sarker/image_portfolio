@@ -33,7 +33,7 @@
                     <tr>
                         <td>{{ $portfolio->id }}</td>
                         <td>{{ $portfolio->name }}</td>
-                        <td>{{ $portfolio->category_id }}</td>
+                        <td>{{ $portfolio->category->name }}</td>
                         <td>{{ $portfolio->description }}</td>
                         <td><img src="{{ asset('storage/portfolios/'.$portfolio->image) }}" width="100px" height="110px" alt=""></td>
                         <td>{{ $portfolio->status }}</td>

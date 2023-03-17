@@ -27,7 +27,7 @@ class PortfolioController extends Controller
             'name'=>['required',Rule::unique('portfolios','name')],
             'category_id'=>'required',
             'desctiption' =>'nullable',
-            'image' =>'required|mimes:png,jpg,jpeg|max:1024',
+            'image' =>'required|mimes:png,jpg,jpeg',
         ]);
         if($image){
             $image_name = uniqid().'.'.$image->getClientOriginalExtension();
@@ -63,7 +63,7 @@ class PortfolioController extends Controller
             'name'=>['required',Rule::unique('portfolios','name')->ignore($portfolio->id)],
             'category_id'=>'required',
             'desctiption' =>'nullable',
-            'image' =>'nullable|mimes:png,jpg,jpeg|max:1024',
+            'image' =>'nullable|mimes:png,jpg,jpeg',
         ]);
         if($image){
 
