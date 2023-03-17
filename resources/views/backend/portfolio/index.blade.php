@@ -4,7 +4,7 @@
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
             <x-slot:title>
-                Category List
+                Portfolio List
             </x-slot>
         </div>
         @if (session('success'))
@@ -13,7 +13,7 @@
             </div>   
         @endif
         <div class="card-body">
-            <a href="{{ route('category.create') }}" class="btn btn-sm btn-primary">create</a>
+            <a href="{{ route('portfolio.create') }}" class="btn btn-sm btn-primary">create</a>
             <table id="datatablesSimple">
                 <thead>
                     <tr>
