@@ -10,7 +10,7 @@
                             <div class="card-header"><h3>Create a Portfolio</h3></div>
                             <div class="card-body">
                                 <!-- <form action="./index.php" method="" > -->
-                                <form  action="{{ route('portfolio.store',$portfolio->id) }}"  method="POST" enctype="multipart/form-data"  >
+                                <form  action="{{ route('portfolio.store') }}"  method="POST" enctype="multipart/form-data"  >
 
                                     @csrf
                                     
@@ -23,6 +23,9 @@
                                                 
                                             @endforeach
                                         </select>
+                                        @error('category_id')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror 
                                     </div>
                                     <div class="mb-3">
                                         <label for="name">Product Name:</label>

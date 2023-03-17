@@ -19,23 +19,27 @@
                     <tr>
                         <th>Ser</th>
                         <th>Name</th>
+                        <th>Category Name</th>
                         <th>Description</th>
+                        <th>Image</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                
                 <tbody>
-                    @foreach ($categories as $category )
+                    @foreach ($portfolios as $portfolio )
                     <tr>
-                        <td>{{ $category->id }}</td>
-                        <td>{{ $category->name }}</td>
-                        <td>{{ $category->description }}</td>
-                        <td>{{ $category->status }}</td>
+                        <td>{{ $portfolio->id }}</td>
+                        <td>{{ $portfolio->name }}</td>
+                        <td>{{ $portfolio->category_id }}</td>
+                        <td>{{ $portfolio->description }}</td>
+                        <td><img src="{{ asset('storage/portfolios/'.$portfolio->image) }}" width="100px" height="110px" alt=""></td>
+                        <td>{{ $portfolio->status }}</td>
                         <td>
-                            <a href="{{ route('category.show',$category->id) }}" class="btn btn-sm btn-success">show</a>
-                            <a href="{{ route('category.edit',$category->id) }}" class="btn btn-sm btn-warning">edit</a>
-                            <form style="display:inline" action="{{ route('category.delete',$category->id) }}" method="POST">
+                            <a href="{{ route('portfolio.show',$portfolio->id) }}" class="btn btn-sm btn-success">show</a>
+                            <a href="{{ route('portfolio.edit',$portfolio->id) }}" class="btn btn-sm btn-warning">edit</a>
+                            <form style="display:inline" action="{{ route('portfolio.delete',$portfolio->id) }}" method="POST">
                                 @csrf
                                 @method("DELETE")
                                 <button onclick="alert('Are you sure?You want to delete this!')" type="submit" class="btn btn-sm btn-danger">delete</button>

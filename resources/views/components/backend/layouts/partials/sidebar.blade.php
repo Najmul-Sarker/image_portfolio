@@ -63,6 +63,10 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Category
                 </a>
+                <a class="nav-link" href="{{ route('portfolio.index') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    Portfolio
+                </a>
             </div>
         </div>
         <div class="sb-sidenav-footer">
